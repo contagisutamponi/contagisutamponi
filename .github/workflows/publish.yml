@@ -2,8 +2,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - master
-      - automatic
+      - main
   schedule:
     - cron: "4 17 * * *"
 
