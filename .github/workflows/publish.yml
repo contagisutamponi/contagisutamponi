@@ -16,12 +16,12 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Install and Build
+      - name: Setup and build
         uses: actions/setup-python@v2
         with:
-          python-version: "3.x" # Version range or exact version of a Python version to use, using SemVer's version range syntax
-          architecture: "x64" # optional x64 or x86. Defaults to x64 if not specified
-        run: |
+          python-version: 3.x
+          architecture: x64
+      - run: |
           pip install requests Jinja2
           python build_report.py
 
