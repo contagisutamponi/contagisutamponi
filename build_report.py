@@ -61,7 +61,7 @@ def _diff_data(ref_date: date = date.today()) -> Optional[Contagion]:
 
 def main(template_name: str = 'index.html', output_dir: str = 'build') -> int:
 
-    latest_data = _diff_data(date.today() - timedelta(days=1))
+    latest_data = _diff_data()
     if latest_data:
         previous_data = [_diff_data(
             date.today() - timedelta(days=x)) for x in range(1, 14)]
