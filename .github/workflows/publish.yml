@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - master
+      - automatic
+  schedule:
+    - cron: "4 17 * * *"
 
 jobs:
   build-and-deploy:
