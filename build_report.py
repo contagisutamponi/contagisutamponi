@@ -61,10 +61,10 @@ def _diff_data(ref_date: date = date.today()) -> Optional[Contagion]:
 
 def main(template_name: str = 'index.html', output_dir: str = 'build') -> int:
 
-    latest_data = _diff_data()
+    latest_data = _diff_data()  # date.today() - timedelta(days=1)
     if latest_data:
         previous_data = [_diff_data(
-            date.today() - timedelta(days=x)) for x in range(1, 14)]
+            date.today() - timedelta(days=x)) for x in range(1, 7)]
 
         template_path = pathlib.Path().absolute()
 
