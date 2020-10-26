@@ -82,6 +82,7 @@
         <h3>Dati precedenti</h3>
       </div>
     </div>
+
     <div class="row">
       <div class="col-12">
         <table id="historic-data" class="table responsive-table">
@@ -94,24 +95,14 @@
             </tr>
           </thead>
           <tbody>
+            {% for item in previous_data %}
             <tr>
-              <td>2020-10-25</td>
-              <td>21.273</td>
-              <td>161.880</td>
-              <td>13.14%</td>
+              <td>{{item.report_date|datetimeformat}}</td>
+              <td>{{item.contagions|currencyformat}}</td>
+              <td>{{item.tests|currencyformat}}</td>
+              <td>{{item.percents|percentformat}}%</td>
             </tr>
-            <tr>
-              <td>2020-10-24</td>
-              <td>19.644</td>
-              <td>177.669</td>
-              <td>11.06%</td>
-            </tr>
-            <tr>
-              <td>2020-10-23</td>
-              <td>19.143</td>
-              <td>182.032</td>
-              <td>10.52%</td>
-            </tr>
+            {% endfor %}
           </tbody>
         </table>
       </div>
@@ -120,9 +111,9 @@
   <footer class="text-center">
     <div class="row">
       <div class="col-12">
-  A <span class="strikeout">not so funny</span> project by 
+        A <span class="strikeout">not so funny</span> project by
         <a href="mailto:antoniomolinari@me.com">magnum</a>,
-        <a href="mailto:marco@marcobnz.com">marcobnz</a> 
+        <a href="mailto:marco@marcobnz.com">marcobnz</a>
         and <a href="mailto:sammyrulez@gmail.com">sammyrulez</a>
       </div>
     </div>
