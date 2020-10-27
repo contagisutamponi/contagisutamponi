@@ -2,7 +2,7 @@ import pathlib
 import sys
 import csv
 import dataclasses
-from typing import Dict, Optional
+from typing import Dict, Optional, List
 from datetime import date, datetime, timedelta
 import requests
 from jinja2 import Environment, FileSystemLoader, select_autoescape
@@ -59,7 +59,7 @@ def _diff_data(ref_date: date = date.today()) -> Optional[Contagion]:
         return None
 
 
-def main(template_name: str = 'index.html', output_dir: str = 'build') -> int:
+def main(template_names: List[str] = ['index.html', 'rss.xml'], output_dir: str = 'build') -> int:
 
     date_data = date.today()
     if datetime.now().hour < 16:
@@ -78,11 +78,13 @@ def main(template_name: str = 'index.html', output_dir: str = 'build') -> int:
         env.filters['datetimeformat'] = datetime_format
         env.filters['currencyformat'] = format_currency
         env.filters['percentformat'] = format_percent
-        template = env.get_template(template_name)
-        output_from_parsed_template = template.render(
-            latest_data=latest_data, previous_data=previous_data)
-        with open(output_dir + "/" + template_name, "w") as fh:
-            fh.write(output_from_parsed_template)
+        for template_name in template_names:
+            template = env.get_template(template_name)
+            output_from_parsed_template = template.render(
+                latest_data=latest_data, previous_data=previous_data)
+            with open(output_dir + "/" + template_name, "w") as fh:
+                fh.write(output_from_parsed_template)
+
         return 0
     else:
         return -1
