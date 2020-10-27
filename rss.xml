@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+
+<channel>
+  <title>Contagi su Tamponi</title>
+  <link>https://www.contagisutamponi.it/</link>
+  <description>A not so funny project</description>
+  <item>
+    <title>Aggiornamento 26-10-2020</title>
+    <link>https://www.contagisutamponi.it/</link>
+    <description>Percentuale contagiati su tamponi 13.64%</description>
+    <pubDate> 26-10-2020</pubDate>
+  </item>
+</channel>
