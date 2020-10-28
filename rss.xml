@@ -10,4 +10,12 @@
     <description>Percentuale contagiati su tamponi {{latest_data.percents|percentformat}}%</description>
     <pubDate> {{latest_data.report_date|datetimeformat}}</pubDate>
   </item>
+   {% for item in previous_data %}
+    <item>
+    <title>Aggiornamento {{item.report_date|datetimeformat}}</title>
+    <link>https://www.contagisutamponi.it/</link>
+    <description>Percentuale contagiati su tamponi {{item.percents|percentformat}}%</description>
+    <pubDate> {{item.report_date|datetimeformat}}</pubDate>
+  </item>
+   {% endfor %}
 </channel>
