@@ -2,6 +2,7 @@ import pathlib
 import sys
 import csv
 import dataclasses
+from email import utils
 from typing import Dict, Optional, List
 from datetime import date, datetime, timedelta
 import requests
@@ -21,6 +22,11 @@ class Contagion:
 
 def datetime_format(value, format="%d-%m-%Y"):
     return value.strftime(format)
+
+
+def datetime_rfc_2822_format(value):
+    my_time = datetime.min.time()
+    return utils.format_datetime(datetime.combine(value, my_time))
 
 
 def format_currency(value):
@@ -85,6 +91,7 @@ def main(template_names: List[str] = ['index.html', 'rss.xml'], output_dir: str 
         env.filters['datetimeformat'] = datetime_format
         env.filters['currencyformat'] = format_currency
         env.filters['percentformat'] = format_percent
+        env.filters['rfcformat'] = datetime_rfc_2822_format
         for template_name in template_names:
             template = env.get_template(template_name)
             output_from_parsed_template = template.render(

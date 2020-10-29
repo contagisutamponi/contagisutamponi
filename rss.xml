@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0">
 <channel>
   <title>Contagi su Tamponi</title>
   <link>https://www.contagisutamponi.it/</link>
@@ -8,14 +6,14 @@
     <title>Aggiornamento {{latest_data.report_date|datetimeformat}}</title>
     <link>https://www.contagisutamponi.it/</link>
     <description>Percentuale contagiati su tamponi {{latest_data.percents|percentformat}}%</description>
-    <pubDate>{{latest_data.report_date|datetimeformat}}</pubDate>
+    <pubDate>{{latest_data.report_date|rfcformat}}</pubDate>
   </item>
    {% for item in previous_data %}
     <item>
     <title>Aggiornamento {{item.report_date|datetimeformat}}</title>
     <link>https://www.contagisutamponi.it/</link>
     <description>Percentuale contagiati su tamponi {{item.percents|percentformat}}%</description>
-    <pubDate>{{item.report_date|datetimeformat}}</pubDate>
+    <pubDate>{{item.report_date|rfcformat}}</pubDate>
   </item>
    {% endfor %}
 </channel>
