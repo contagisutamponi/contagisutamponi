@@ -145,12 +145,12 @@
 
     // The data for our dataset
     data: {
-      labels: [{% for item in previous_data | reverse %}'{{ item.report_date | datetimeformat }}', {% endfor %} ],
+      labels: [{% for item in trend %}'{{ item.report_date | datetimeformat }}', {% endfor %} ],
   datasets: [{
     label: 'Percentuale c/t',
     backgroundColor: 'rgb(255, 99, 132)',
     borderColor: 'rgb(255, 99, 132)',
-    data: [{% for item in previous_data | reverse %}{{ item.percents | percentformat }}, {% endfor %}]
+    data: [{% for item in trend %}{{ item.percents | percentformat }}, {% endfor %}]
       }]
     },
 

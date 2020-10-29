@@ -31,6 +31,10 @@ def format_percent(value):
     return "{:,.2f}".format(value)
 
 
+def is_same_day():
+    return datetime.now().hour < 16
+
+
 csv_dt_pattern = "%Y-%m-%dT17:00:00"
 
 
@@ -62,13 +66,16 @@ def _diff_data(ref_date: date = date.today()) -> Optional[Contagion]:
 def main(template_names: List[str] = ['index.html', 'rss.xml'], output_dir: str = 'build') -> int:
 
     date_data = date.today()
-    if datetime.now().hour < 16:
+    if is_same_day():
         date_data = date.today() - timedelta(days=1)
     latest_data = _diff_data(date_data)
     if latest_data:
         previous_data = [_diff_data(
             date.today() - timedelta(days=x)) for x in range(1, 7)]
-
+        trend = previous_data.copy()
+        trend.reverse()
+        if not is_same_day():
+            trend.append(latest_data)
         template_path = pathlib.Path().absolute()
 
         env = Environment(
@@ -81,7 +88,7 @@ def main(template_names: List[str] = ['index.html', 'rss.xml'], output_dir: str 
         for template_name in template_names:
             template = env.get_template(template_name)
             output_from_parsed_template = template.render(
-                latest_data=latest_data, previous_data=previous_data)
+                latest_data=latest_data, previous_data=previous_data, trend=trend)
             with open(output_dir + "/" + template_name, "w") as fh:
                 fh.write(output_from_parsed_template)
 
