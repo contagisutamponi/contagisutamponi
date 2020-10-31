@@ -39,7 +39,7 @@ def format_percent(value):
 
 
 def is_same_day():
-    return datetime.now().hour < 16
+    return datetime.now().hour < 18
 
 
 csv_dt_pattern = "%Y-%m-%dT17:00:00"
@@ -100,18 +100,18 @@ def main(template_names: List[str] = ['index.html', 'rss.xml'], output_dir: str 
             with open(output_dir + "/" + template_name, "w") as fh:
                 fh.write(output_from_parsed_template)
         if render_image:
-            fig, ax = plt.subplots()
-            labels = list(map(lambda d: datetime_format(
-                d.report_date), previous_data))
-            chart_data = list(map(lambda d: format_percent(
-                d.percents), previous_data))
-            labels.reverse()
-            chart_data.reverse()
-            ax.text(
-                0.1, 4.2, f'{latest_data.report_date} : {format_percent(latest_data.percents)} %', fontsize=24)
+            with plt.xkcd():
+                fig, ax = plt.subplots()
+                labels = list(map(lambda d: datetime_format(
+                    d.report_date, format="%d-%m"), previous_data))
+                chart_data = list(map(lambda d: d.percents, previous_data))
+                labels.reverse()
+                chart_data.reverse()
+                fig.text(
+                    0.15, 0.8, f'{latest_data.report_date} : {format_percent(latest_data.percents)} %', fontsize=24)
 
-            ax.plot(labels, chart_data)
-            plt.savefig(f'{output_dir}/chart.png')
+                ax.plot(labels, chart_data)
+                plt.savefig(f'{output_dir}/chart.png')
 
         return 0
     else:
