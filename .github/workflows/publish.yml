@@ -18,7 +18,7 @@ jobs:
       - name: Setup and build
         uses: actions/setup-python@v2
         with:
-          python-version: 3.x
+          python-version: 3.8
           architecture: x64
       - run: |
           pip install requests Jinja2 pillow matplotlib
