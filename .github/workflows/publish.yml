@@ -21,7 +21,7 @@ jobs:
           python-version: 3.x
           architecture: x64
       - run: |
-          pip install requests Jinja2
+          pip install requests Jinja2 matplotlib
           python build_report.py
 
       - name: Deploy 🚀

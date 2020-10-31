@@ -3,3 +3,4 @@ build/index.html
 build/rss.xml
 .vscode
 .DS_Store
+build/chart.png

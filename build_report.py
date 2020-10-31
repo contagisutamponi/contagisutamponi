@@ -7,6 +7,7 @@ from typing import Dict, Optional, List
 from datetime import date, datetime, timedelta
 import requests
 from jinja2 import Environment, FileSystemLoader, select_autoescape
+import matplotlib.pyplot as plt
 
 
 @dataclasses.dataclass
@@ -69,7 +70,7 @@ def _diff_data(ref_date: date = date.today()) -> Optional[Contagion]:
         return None
 
 
-def main(template_names: List[str] = ['index.html', 'rss.xml'], output_dir: str = 'build') -> int:
+def main(template_names: List[str] = ['index.html', 'rss.xml'], output_dir: str = 'build', render_image: bool = True) -> int:
 
     date_data = date.today()
     if is_same_day():
@@ -98,6 +99,19 @@ def main(template_names: List[str] = ['index.html', 'rss.xml'], output_dir: str 
                 latest_data=latest_data, previous_data=previous_data, trend=trend)
             with open(output_dir + "/" + template_name, "w") as fh:
                 fh.write(output_from_parsed_template)
+        if render_image:
+            fig, ax = plt.subplots()
+            labels = list(map(lambda d: datetime_format(
+                d.report_date), previous_data))
+            chart_data = list(map(lambda d: format_percent(
+                d.percents), previous_data))
+            labels.reverse()
+            chart_data.reverse()
+            ax.text(
+                0.1, 4.2, f'{latest_data.report_date} : {format_percent(latest_data.percents)} %', fontsize=24)
+
+            ax.plot(labels, chart_data)
+            plt.savefig(f'{output_dir}/chart.png')
 
         return 0
     else:
