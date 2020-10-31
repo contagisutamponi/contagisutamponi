@@ -63,7 +63,7 @@ def _diff_data(ref_date: date = date.today()) -> Optional[Contagion]:
 def main(template_names: List[str] = ['index.html', 'rss.xml'], output_dir: str = 'build', render_image: bool = True) -> int:
 
     date_data = date.today()
-    if datetime.now().hour < 16:
+    if datetime.now().hour < 17:
         date_data = date.today() - timedelta(days=1)
     latest_data = _diff_data(date_data)
     if latest_data:
@@ -93,7 +93,8 @@ def main(template_names: List[str] = ['index.html', 'rss.xml'], output_dir: str 
                 d.percents), previous_data))
             labels.reverse()
             chart_data.reverse()
-            print(chart_data)
+            ax.text(
+                0.1, 4.2, f'{latest_data.report_date} : {format_percent(latest_data.percents)} %', fontsize=24)
 
             ax.plot(labels, chart_data)
             plt.savefig(f'{output_dir}/chart.png')
