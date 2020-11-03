@@ -39,7 +39,7 @@ def format_percent(value):
 
 
 def is_same_day():
-    return datetime.now().hour < 18
+    return datetime.now().hour < 16
 
 
 csv_dt_pattern = "%Y-%m-%dT17:00:00"
@@ -63,10 +63,11 @@ def _diff_data(ref_date: date = date.today()) -> Optional[Contagion]:
         if len(rows) == 2:
             return Contagion(report_date=ref_date, contagions=int(rows[1][8]), tests=int(rows[1][14]) - int(rows[0][14]))
         else:
-            print(rows)
+            print("Error just got \n \t" + rows)
             return None
 
     else:
+        print("Error: " + resp.text)
         return None
 
 
@@ -97,8 +98,11 @@ def main(template_names: List[str] = ['index.html', 'rss.xml'], output_dir: str 
             template = env.get_template(template_name)
             output_from_parsed_template = template.render(
                 latest_data=latest_data, previous_data=previous_data, trend=trend)
-            with open(output_dir + "/" + template_name, "w") as fh:
+            out_path = f"{output_dir}/{template_name}"
+            print(f" Writing: {out_path}")
+            with open(out_path, "w") as fh:
                 fh.write(output_from_parsed_template)
+        print(f"Rendering image ? {render_image}")
         if render_image:
             with plt.xkcd():
                 fig, ax = plt.subplots()
@@ -112,6 +116,7 @@ def main(template_names: List[str] = ['index.html', 'rss.xml'], output_dir: str 
 
                 ax.plot(labels, chart_data)
                 plt.savefig(f'{output_dir}/chart.png')
+                print("Image chart updated")
 
         return 0
     else:
