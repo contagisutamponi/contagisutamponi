@@ -126,6 +126,13 @@
           <tbody>
             
             <tr>
+              <td>08-11-2020</td>
+              <td>32.616</td>
+              <td>191.144</td>
+              <td>17.06%</td>
+            </tr>
+            
+            <tr>
               <td>07-11-2020</td>
               <td>39.811</td>
               <td>231.673</td>
@@ -158,13 +165,6 @@
               <td>28.244</td>
               <td>182.287</td>
               <td>15.49%</td>
-            </tr>
-            
-            <tr>
-              <td>02-11-2020</td>
-              <td>22.253</td>
-              <td>135.731</td>
-              <td>16.39%</td>
             </tr>
             
           </tbody>
@@ -202,12 +202,12 @@
 
     // The data for our dataset
     data: {
-      labels: ['02-11-2020', '03-11-2020', '04-11-2020', '05-11-2020', '06-11-2020', '07-11-2020', '08-11-2020',  ],
+      labels: ['03-11-2020', '04-11-2020', '05-11-2020', '06-11-2020', '07-11-2020', '08-11-2020',  ],
   datasets: [{
     label: 'Percentuale c/t',
     backgroundColor: 'rgb(255, 99, 132)',
     borderColor: 'rgb(255, 99, 132)',
-    data: [16.39, 15.49, 14.42, 15.69, 16.14, 17.18, 17.06, ]
+    data: [15.49, 14.42, 15.69, 16.14, 17.18, 17.06, ]
       }]
     },
 
@@ -219,7 +219,7 @@
           min: 0,
           max: 100,
           callback: function (value, index, values) {//needed to change the scientific notation results from using logarithmic scale
-            if (value < 50 || value > 91)
+            if (value < 51 || value > 91)
               return Number(value.toString());//pass tick values as a string into Number function
           }
         }
