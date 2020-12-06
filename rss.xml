@@ -5,22 +5,6 @@
   <description>A not so funny project</description>
    
     <item>
-    <guid isPermaLink="false">uid_28-11-2020</guid>
-    <title>Aggiornamento 28-11-2020</title>
-    <link>https://www.contagisutamponi.it/</link>
-    <description>Percentuale contagiati su tamponi 11.65%</description>
-    <pubDate>Sat, 28 Nov 2020 00:00:00 -0000</pubDate>
-  </item>
-   
-    <item>
-    <guid isPermaLink="false">uid_29-11-2020</guid>
-    <title>Aggiornamento 29-11-2020</title>
-    <link>https://www.contagisutamponi.it/</link>
-    <description>Percentuale contagiati su tamponi 11.67%</description>
-    <pubDate>Sun, 29 Nov 2020 00:00:00 -0000</pubDate>
-  </item>
-   
-    <item>
     <guid isPermaLink="false">uid_30-11-2020</guid>
     <title>Aggiornamento 30-11-2020</title>
     <link>https://www.contagisutamponi.it/</link>
@@ -58,6 +42,22 @@
     <link>https://www.contagisutamponi.it/</link>
     <description>Percentuale contagiati su tamponi 11.33%</description>
     <pubDate>Fri, 04 Dec 2020 00:00:00 -0000</pubDate>
+  </item>
+   
+    <item>
+    <guid isPermaLink="false">uid_05-12-2020</guid>
+    <title>Aggiornamento 05-12-2020</title>
+    <link>https://www.contagisutamponi.it/</link>
+    <description>Percentuale contagiati su tamponi 10.80%</description>
+    <pubDate>Sat, 05 Dec 2020 00:00:00 -0000</pubDate>
+  </item>
+   
+    <item>
+    <guid isPermaLink="false">uid_06-12-2020</guid>
+    <title>Aggiornamento 06-12-2020</title>
+    <link>https://www.contagisutamponi.it/</link>
+    <description>Percentuale contagiati su tamponi 11.55%</description>
+    <pubDate>Sun, 06 Dec 2020 00:00:00 -0000</pubDate>
   </item>
    
 </channel>
