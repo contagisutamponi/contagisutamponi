@@ -61,7 +61,7 @@ def _diff_data(ref_date: date = date.today()) -> Optional[Contagion]:
 
         #print(f"rows {list(rows)}")
         if len(rows) == 2:
-            return Contagion(report_date=ref_date, contagions=int(rows[1][8]), tests=int(rows[1][14]) - int(rows[0][14]))
+            return Contagion(report_date=ref_date, contagions=int(rows[1][13]) - int(rows[0][13]), tests=int(rows[1][14]) - int(rows[0][14]))
         else:
             print("Error just got \n \t" + rows)
             return None
@@ -80,6 +80,8 @@ def main(template_names: List[str] = ['index.html', 'rss.xml'], output_dir: str 
     if latest_data:
         previous_data = [_diff_data(
             date.today() - timedelta(days=x)) for x in range(1, 7)]
+        
+        previous_data = list(filter(lambda c:c.contagions > 0 and c.tests > 0, previous_data))
         trend = previous_data.copy()
         trend.reverse()
         if not is_same_day():
