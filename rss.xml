@@ -40,7 +40,7 @@
     <guid isPermaLink="false">uid_22-12-2020</guid>
     <title>Aggiornamento 22-12-2020</title>
     <link>https://www.contagisutamponi.it/</link>
-    <description>Percentuale contagiati su tamponi 8.01%</description>
+    <description>Percentuale contagiati su tamponi 8.44%</description>
     <pubDate>Tue, 22 Dec 2020 00:00:00 -0000</pubDate>
   </item>
    
@@ -48,8 +48,16 @@
     <guid isPermaLink="false">uid_23-12-2020</guid>
     <title>Aggiornamento 23-12-2020</title>
     <link>https://www.contagisutamponi.it/</link>
-    <description>Percentuale contagiati su tamponi 7.93%</description>
+    <description>Percentuale contagiati su tamponi 7.56%</description>
     <pubDate>Wed, 23 Dec 2020 00:00:00 -0000</pubDate>
+  </item>
+   
+    <item>
+    <guid isPermaLink="false">uid_24-12-2020</guid>
+    <title>Aggiornamento 24-12-2020</title>
+    <link>https://www.contagisutamponi.it/</link>
+    <description>Percentuale contagiati su tamponi 9.31%</description>
+    <pubDate>Thu, 24 Dec 2020 00:00:00 -0000</pubDate>
   </item>
    
 </channel>
