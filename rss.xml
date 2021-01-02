@@ -5,14 +5,6 @@
   <description>A not so funny project</description>
    
     <item>
-    <guid isPermaLink="false">uid_26-12-2020</guid>
-    <title>Aggiornamento 26-12-2020</title>
-    <link>https://www.contagisutamponi.it/</link>
-    <description>Percentuale contagiati su tamponi 12.79%</description>
-    <pubDate>Sat, 26 Dec 2020 00:00:00 -0000</pubDate>
-  </item>
-   
-    <item>
     <guid isPermaLink="false">uid_27-12-2020</guid>
     <title>Aggiornamento 27-12-2020</title>
     <link>https://www.contagisutamponi.it/</link>
@@ -58,6 +50,14 @@
     <link>https://www.contagisutamponi.it/</link>
     <description>Percentuale contagiati su tamponi 14.10%</description>
     <pubDate>Fri, 01 Jan 2021 00:00:00 -0000</pubDate>
+  </item>
+   
+    <item>
+    <guid isPermaLink="false">uid_02-01-2021</guid>
+    <title>Aggiornamento 02-01-2021</title>
+    <link>https://www.contagisutamponi.it/</link>
+    <description>Percentuale contagiati su tamponi 17.60%</description>
+    <pubDate>Sat, 02 Jan 2021 00:00:00 -0000</pubDate>
   </item>
    
 </channel>
