@@ -5,14 +5,6 @@
   <description>A not so funny project</description>
    
     <item>
-    <guid isPermaLink="false">uid_22-01-2021</guid>
-    <title>Aggiornamento 22-01-2021</title>
-    <link>https://www.contagisutamponi.it/</link>
-    <description>Percentuale contagiati su tamponi 5.15%</description>
-    <pubDate>Fri, 22 Jan 2021 00:00:00 -0000</pubDate>
-  </item>
-   
-    <item>
     <guid isPermaLink="false">uid_23-01-2021</guid>
     <title>Aggiornamento 23-01-2021</title>
     <link>https://www.contagisutamponi.it/</link>
@@ -56,8 +48,16 @@
     <guid isPermaLink="false">uid_28-01-2021</guid>
     <title>Aggiornamento 28-01-2021</title>
     <link>https://www.contagisutamponi.it/</link>
-    <description>Percentuale contagiati su tamponi 5.22%</description>
+    <description>Percentuale contagiati su tamponi 5.21%</description>
     <pubDate>Thu, 28 Jan 2021 00:00:00 -0000</pubDate>
+  </item>
+   
+    <item>
+    <guid isPermaLink="false">uid_29-01-2021</guid>
+    <title>Aggiornamento 29-01-2021</title>
+    <link>https://www.contagisutamponi.it/</link>
+    <description>Percentuale contagiati su tamponi 5.05%</description>
+    <pubDate>Fri, 29 Jan 2021 00:00:00 -0000</pubDate>
   </item>
    
 </channel>
